@@ -1,9 +1,8 @@
 package com.lev1.datastructure.sparsearray;
 
-import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 
-public class SparseArray {
+public class SparseArrayWithIO {
     public static void main(String[] args) {
         int[][] chessArr = new int[11][11];
         chessArr[1][2] = 1;
@@ -50,20 +49,24 @@ public class SparseArray {
             }
         }
 
+        output(sparseArr);
+
+        int sparseArrFromFile[][] = input();
+
         System.out.println("稀疏数组~~~");
         //遍历稀疏数组打印转换结果
-        for (int arr[] : sparseArr) {
+        for (int arr[] : sparseArrFromFile) {
             System.out.printf("%d\t%d\t%d\t", arr[0], arr[1], arr[2]);
             System.out.println();
         }
 
         //还原原始数组
         //1.定义原始数组
-        int chessArr1[][] = new int[sparseArr[0][0]][sparseArr[0][1]];
+        int chessArr1[][] = new int[sparseArrFromFile[0][0]][sparseArrFromFile[0][1]];
 
         //2.原始数组赋值
-        for (int i = 1; i < sparseArr.length; i++) {
-            chessArr1[sparseArr[i][0]][sparseArr[i][1]] = sparseArr[i][2];
+        for (int i = 1; i < sparseArrFromFile.length; i++) {
+            chessArr1[sparseArrFromFile[i][0]][sparseArrFromFile[i][1]] = sparseArrFromFile[i][2];
         }
 
         //打印原始数组
@@ -74,5 +77,47 @@ public class SparseArray {
             }
             System.out.println();
         }
+    }
+
+    static void output(int data[][]) {
+        try {
+            FileWriter output = new FileWriter("d:" + File.separator + "map.data");
+            for (int i = 0; i < data.length; i++) {
+                for (int j = 0; j < data[i].length; j++) {
+                    output.write(data[i][j] + "\t");
+                }
+                output.write("\r\n");
+            }
+            output.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static int[][] input() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("d:" + File.separator + "map.data"));
+            String line;
+            int count = 0;
+            while ((line = reader.readLine())!= null){
+                count++;
+            }
+            int sparseArr[][] = new int[count][3];
+            reader.close();
+            BufferedReader reader1 = new BufferedReader(new FileReader("d:" + File.separator + "map.data"));
+            int row = 0;
+            while ((line = reader1.readLine())!=null){
+                String str[] = line.split("\t");
+                sparseArr[row][0] = Integer.parseInt(str[0]);
+                sparseArr[row][1] = Integer.parseInt(str[1]);
+                sparseArr[row][2] = Integer.parseInt(str[2]);
+                row++;
+            }
+            reader1.close();
+            return sparseArr;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
