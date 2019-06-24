@@ -1,4 +1,4 @@
-package com.lev1.ownTest;
+package com.lev1.ownPractice;
 
 public class TestMain {
     public static void main(String[] args) {

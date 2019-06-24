@@ -1,4 +1,4 @@
-package com.lev1.ownTest.testEnum;
+package com.lev1.ownPractice.testEnum;
 
 public class Cat {
     private String name;

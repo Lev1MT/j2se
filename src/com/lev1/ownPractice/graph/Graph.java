@@ -1,4 +1,4 @@
-package com.lev1.ownTest.graph;
+package com.lev1.ownPractice.graph;
 
 import java.util.LinkedList;
 import java.util.List;

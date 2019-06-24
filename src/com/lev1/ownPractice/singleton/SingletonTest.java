@@ -1,4 +1,4 @@
-package com.lev1.ownTest.singleton;
+package com.lev1.ownPractice.singleton;
 
 public class SingletonTest {
     public static void main(String[] args) {

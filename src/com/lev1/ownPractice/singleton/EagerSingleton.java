@@ -1,4 +1,4 @@
-package com.lev1.ownTest.singleton;
+package com.lev1.ownPractice.singleton;
 
 /**
  *  饿汉式单例

@@ -1,4 +1,4 @@
-package com.lev1.ownTest.interview;
+package com.lev1.ownPractice.interview;
 
 public class classInitialize extends A {
 

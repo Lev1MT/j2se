@@ -1,12 +1,12 @@
-package com.lev1.ownTest.graph;
+package com.lev1.ownPractice.graph;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.lev1.ownTest.graph.Graph.Edge;
-import com.lev1.ownTest.graph.Graph.Vertex;
+import com.lev1.ownPractice.graph.Graph.Edge;
+import com.lev1.ownPractice.graph.Graph.Vertex;
 
 /**
  * 测试用main方法

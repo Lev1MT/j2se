@@ -1,4 +1,4 @@
-package com.lev1.ownTest.testEnum;
+package com.lev1.ownPractice.testEnum;
 
 public enum Color {
     RED("红色", 1),    //红色

@@ -1,4 +1,4 @@
-package com.lev1.ownTest.classoperation;
+package com.lev1.ownPractice.classoperation;
 
 public class classoperationMain {
     public static void main(String[] args) {
