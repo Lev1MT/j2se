@@ -1,8 +1,5 @@
 package com.lev1.datastructure.sparsearray;
 
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-
 public class SparseArray {
     public static void main(String[] args) {
         int[][] chessArr = new int[11][11];
