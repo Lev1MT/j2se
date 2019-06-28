@@ -1,5 +1,7 @@
 package com.lev1.datastructure.linkedlist;
 
+import java.util.Stack;
+
 public class SingleLinkedListDemo {
 
     public static void main(String[] args) {
@@ -8,23 +10,41 @@ public class SingleLinkedListDemo {
         LinkedNode node3 = new LinkedNode(5, "王五");
         LinkedNode node4 = new LinkedNode(6, "马六");
         SingleLinkedList list = new SingleLinkedList();
-//        list.add(node1);
-//        list.add(node2);
-//        list.add(node3);
-//        list.add(node4);
         list.addByOrder(node3);
         list.addByOrder(node2);
         list.addByOrder(node1);
         list.addByOrder(node4);
+        LinkedNode node5 = new LinkedNode(2, "张三");
+        LinkedNode node6 = new LinkedNode(7, "李四");
+        LinkedNode node7 = new LinkedNode(9, "王五");
+        LinkedNode node8 = new LinkedNode(8, "马六");
+        SingleLinkedList list1 = new SingleLinkedList();
+        list1.addByOrder(node6);
+        list1.addByOrder(node5);
+        list1.addByOrder(node8);
+        list1.addByOrder(node7);
+//        list.add(node1);
+//        list.add(node2);
+//        list.add(node3);
+//        list.add(node4);
 //        list.del(6);
 //        list.modify(new LinkedNode(3, "小张张"));
-        System.out.println("单链表的节点个数为：" + list.getLength());
-        System.out.println("单链表倒数第1个节点为：" + list.findLastIndexNode(4));
-        System.out.println("链表遍历结果：");
+//        System.out.println("单链表的节点个数为：" + list.getLength());
+//        System.out.println("单链表倒数第1个节点为：" + list.findLastIndexNode(4));
+//        System.out.println("链表遍历结果：");
+//        list.list();
+//        System.out.println("逆序打印单链表：");
+//        list.listByReversedOrder();
+//        list.reverse();
+//        System.out.println("反转后的链表为：");
+//        list.list();
+        System.out.println("合并前的两个单链表:");
         list.list();
-        list.reverse();
-        System.out.println("反转后的链表为：");
-        list.list();
+        System.out.println("===========分割线============");
+        list1.list();
+        System.out.println("两个有序链表合并后的单链表：");
+        SingleLinkedList list2 = SingleLinkedList.merge(list,list1);
+        list2.list();
     }
 }
 
@@ -185,7 +205,7 @@ class SingleLinkedList {
     // 1.需要两个辅助节点，一个节点为剩余节点，一个节点为新的反转节点
     public void reverse() {
         // 链表为空或者只有一个元素时，无须反转
-        if (isEmpty()&&head.next.next==null) {
+        if (isEmpty() && head.next.next == null) {
             return;
         }
         LinkedNode cur = null;
@@ -204,6 +224,58 @@ class SingleLinkedList {
         }
         // 将头结点指向目标节点
         head.next = result;
+    }
+
+    // 逆序遍历单链表，但不改变单链表的结构
+    // 使用stack(栈===>先进先出)的数据结构，先遍历单链表，然后将链表中元素压入栈中
+    // 遍历stack，依次取出栈中的元素
+    public void listByReversedOrder() {
+        LinkedNode temp = head.next;
+        Stack<LinkedNode> stack = new Stack<>();
+        while (temp != null) {
+            stack.add(temp);
+            temp = temp.next;
+        }
+        while (stack.size() > 0) {
+            System.out.println(stack.pop());
+        }
+    }
+
+    // 合并两个有序单链表，使得合并后的单链表依然有序
+    //
+    public static SingleLinkedList merge(SingleLinkedList list1, SingleLinkedList list2) {
+        SingleLinkedList list = new SingleLinkedList();
+        LinkedNode temp1 = list1.getHead().next;
+        LinkedNode temp2 = list2.getHead().next;
+        LinkedNode tmp = null;
+        while (temp1 != null && temp2 != null) {
+            if (temp1.getId() <= temp2.getId()) {
+                tmp = temp1.next;
+                temp1.next = null;
+                list.add(temp1);
+                temp1 = tmp;
+            } else {
+                tmp = temp2.next;
+                temp2.next = null;
+                list.add(temp2);
+                temp2 = tmp;
+            }
+        }
+
+        while (temp1 != null) {
+            tmp = temp1.next;
+            temp1.next = null;
+            list.add(temp1);
+            temp1 = tmp;
+        }
+
+        while (temp2 != null) {
+            tmp = temp2.next;
+            temp2.next = null;
+            list.add(temp2);
+            temp2 = tmp;
+        }
+        return list;
     }
 
     // 打印链表
