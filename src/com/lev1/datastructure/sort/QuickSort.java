@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int arr[] = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0, -2};
+        int arr[] = {5, 3, 9, 2, 4};
         System.out.println("排序前的数组:" + Arrays.toString(arr));
         quickSort(arr, 0, arr.length - 1);
         System.out.println("排序后的数组:" + Arrays.toString(arr));
@@ -15,7 +15,7 @@ public class QuickSort {
             testArr[i] = (int) (Math.random() * 10000);// 生成一个0-10000的随机数
         }
         long bubbleStart = System.currentTimeMillis();
-        quickSort(testArr,0,testArr.length-1);
+        quickSort(testArr, 0, testArr.length - 1);
         long bubbleEnd = System.currentTimeMillis();
         System.out.println("快速排序排序总共用时:" + (bubbleEnd - bubbleStart) + "毫秒");
     }
@@ -59,17 +59,18 @@ public class QuickSort {
         }
 
         // 如果l==r，必须l++，r--，否则会出现栈溢出
-        if (l == r){
-            l+=1;
-            r-=1;
+        if (l == r) {
+            l += 1;
+            r -= 1;
         }
 
-        if (left < r){
-            quickSort(arr,left,r);
+        // 如果中轴值左边有数据，递归
+        if (right > l) {
+            quickSort(arr, l, right);
         }
-
-        if (right > l){
-            quickSort(arr,l,right);
+        // 如果中轴值右边有数据，递归
+        if (left < r) {
+            quickSort(arr, left, r);
         }
     }
 }
