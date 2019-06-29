@@ -17,7 +17,7 @@ public class InsertSort {
         long bubbleStart = System.currentTimeMillis();
         insertSort(testArr);
         long bubbleEnd = System.currentTimeMillis();
-        System.out.println("排序总共用时:" + (bubbleEnd - bubbleStart) + "毫秒");
+        System.out.println("插入排序总共用时:" + (bubbleEnd - bubbleStart) + "毫秒");
     }
 
     public static void insertSort(int[] arr) {

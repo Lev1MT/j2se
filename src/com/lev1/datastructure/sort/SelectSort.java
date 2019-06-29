@@ -18,7 +18,7 @@ public class SelectSort {
         long bubbleStart = System.currentTimeMillis();
         selectSort(testArr);
         long bubbleEnd = System.currentTimeMillis();
-        System.out.println("排序总共用时:"+(bubbleEnd-bubbleStart)+"毫秒");
+        System.out.println("选择排序总共用时:"+(bubbleEnd-bubbleStart)+"毫秒");
     }
 
     public static void selectSort(int[] arr) {

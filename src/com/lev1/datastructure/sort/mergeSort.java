@@ -10,7 +10,7 @@ public class mergeSort {
         mergeSort(a, 0, a.length - 1, b);
         System.out.println(Arrays.toString(a));
 
-        // 测试使用插入排序的shell排序执行速度
+        // 测试使用归并排序的执行速度
         int testArr[] = new int[80000];
         int temp[] = new int[testArr.length];
         for (int i = 0; i < testArr.length; i++) {
@@ -19,7 +19,7 @@ public class mergeSort {
         long mergeStart = System.currentTimeMillis();
         mergeSort(testArr, 0, testArr.length - 1,temp);
         long mergeEnd = System.currentTimeMillis();
-        System.out.println("快速排序排序总共用时:" + (mergeEnd - mergeStart) + "毫秒");
+        System.out.println("归并排序总共用时:" + (mergeEnd - mergeStart) + "毫秒");
     }
 
     public static void mergeSort(int[] arr, int left, int right, int[] temp) {

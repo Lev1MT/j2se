@@ -9,7 +9,7 @@ public class QuickSort {
         quickSort(arr, 0, arr.length - 1);
         System.out.println("排序后的数组:" + Arrays.toString(arr));
 
-        // 测试使用插入排序的shell排序执行速度
+        // 测试使用快速排序执行速度
         int testArr[] = new int[80000];
         for (int i = 0; i < testArr.length; i++) {
             testArr[i] = (int) (Math.random() * 10000);// 生成一个0-10000的随机数
@@ -17,7 +17,7 @@ public class QuickSort {
         long bubbleStart = System.currentTimeMillis();
         quickSort(testArr, 0, testArr.length - 1);
         long bubbleEnd = System.currentTimeMillis();
-        System.out.println("快速排序排序总共用时:" + (bubbleEnd - bubbleStart) + "毫秒");
+        System.out.println("快速排序总共用时:" + (bubbleEnd - bubbleStart) + "毫秒");
     }
 
     public static void quickSort(int[] arr, int left, int right) {

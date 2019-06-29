@@ -17,7 +17,7 @@ public class BubbleSort {
         long bubbleStart = System.currentTimeMillis();
         bubbleSort(testArr);
         long bubbleEnd = System.currentTimeMillis();
-        System.out.println("排序总共用时:"+(bubbleEnd-bubbleStart)+"毫秒");
+        System.out.println("冒泡排序总共用时:"+(bubbleEnd-bubbleStart)+"毫秒");
     }
 
     /**
