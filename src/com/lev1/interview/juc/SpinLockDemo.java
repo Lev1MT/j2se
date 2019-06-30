@@ -1,4 +1,4 @@
-package com.lev1.interview;
+package com.lev1.interview.juc;
 
 import java.util.concurrent.atomic.AtomicReference;
 
