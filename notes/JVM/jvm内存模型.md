@@ -22,7 +22,7 @@
 
   ==**实例变量存在堆内存中**==
 
-  注：**==JVM调优主要优化的就是堆和方法区(极少)==**
+  注：**==方法区和堆内存空间都是线程共享的，所以JVM调优主要优化的就是堆(主要)和方法区(极少)==**
 
 - PC Register程序计数器
 
@@ -84,3 +84,6 @@
 
 ![GC面试题](./GC面试题.png)
 
+- StackOverlfowError和OutOfMemoryError
+  - StackOverflowError发生在栈内存中，当栈内存溢出，GC无法回收时抛出。
+  - OutOfMemoryError发生在堆内存中，当堆内存中GC无法完全清除堆内存空间占用时抛出。
