@@ -13,7 +13,7 @@ import com.lev1.ownPractice.graph.Graph.Vertex;
  * @author wuhui.wwh
  *
  */
-public class Main {
+public class GraphDemo {
     public static void main(String[] args) {
         Vertex A= new Vertex("A");
         Vertex B= new Vertex("B");
