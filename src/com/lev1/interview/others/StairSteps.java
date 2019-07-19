@@ -1,4 +1,4 @@
-package com.lev1.interview;
+package com.lev1.interview.others;
 
 public class StairSteps {
     public static void main(String[] args) {
