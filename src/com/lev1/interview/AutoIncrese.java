@@ -1,4 +1,4 @@
-package com.lev1.ownPractice.interview;
+package com.lev1.interview;
 
 public class AutoIncrese {
     public static void main(String[] args) {
