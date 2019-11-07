@@ -21,7 +21,6 @@ public class InsertSort {
     }
 
     public static void insertSort(int[] arr) {
-        int count = 0;
         int insertVal = 0;
         int insertIdx = 0;
         for (int i = 1; i < arr.length; i++) {

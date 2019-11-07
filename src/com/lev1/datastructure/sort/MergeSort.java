@@ -2,7 +2,7 @@ package com.lev1.datastructure.sort;
 
 import java.util.Arrays;
 
-public class mergeSort {
+public class MergeSort {
 
     public static void main(String[] args) {
         int[] a = {2, 3, 6, 7, 1, 4, 5, 8};

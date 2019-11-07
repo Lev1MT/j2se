@@ -24,15 +24,15 @@ public class SelectSort {
     public static void selectSort(int[] arr) {
         //选择排序，时间复杂度O(n^2)
         for (int i = 0; i < arr.length-1; i++) {
-            int minIndex = i;
-            int min = arr[i];
+            int minIndex = i;   // 最小值的下标
+            int min = arr[i];   // 最小值
             for (int j = i+1; j < arr.length; j++) {
-                if (min > arr[j]){
+                if (min > arr[j]){  // 找到比假设的最小值更小元素，记录最小值以及下标
                     min = arr[j];
                     minIndex = j;
                 }
             }
-            if (minIndex != i){
+            if (minIndex != i){ // 将每一轮找到的最小值与数组的第i个元素进行替换
                 arr[minIndex] =arr[i];
                 arr[i] = min;
             }
